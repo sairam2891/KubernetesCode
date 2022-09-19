@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: mynginx
+  namespace: test-ns
+  labels:
+    type: proxy
+spec:
+  containers:
+    - name: mynginx
+      image: nginx

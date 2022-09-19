@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-rs
+  labels:
+    type: webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: webserver
+  template:
+    metadata:
+      name: tomcat-pod
+      labels:
+        type: webserver
+    spec:
+      containers:
+        - name: mytomee
+          image: tomee
+          ports:
+            - containerPort: 8080
+              hostPort: 8080

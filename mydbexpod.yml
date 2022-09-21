@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mydb-pod
+  labels:
+    type: mydb
+    author: vignesh
+spec:
+  containers:
+    - name: mydb
+      image: mysql
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: hello
